@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Celestino Jardinagem Machico | Jardinagem e Manutenção de Jardins</title>
   <meta name="description" content="Celestino Jardinagem Machico. Corte de relva, manutenção de jardins, poda de árvores e limpeza de terrenos em Machico, Caniçal, Santa Cruz e arredores." />
-  <meta name="theme-color" content="#2f7d32" />
+  <meta name="theme-color" content="#184d22" />
 
   <style>
     * {
@@ -21,7 +21,7 @@
     body {
       font-family: Arial, Helvetica, sans-serif;
       background: #f7f7f2;
-      color: #1e1e1e;
+      color: #1f1f1f;
       line-height: 1.6;
     }
 
@@ -35,70 +35,104 @@
     }
 
     .container {
-      width: min(1100px, 92%);
+      width: min(1120px, 92%);
       margin: 0 auto;
     }
 
     .topbar {
-      background: #1f5e25;
-      color: #fff;
+      background: #123b19;
+      color: #eef7ee;
       text-align: center;
-      padding: 10px 15px;
-      font-size: 14px;
-      font-weight: bold;
+      padding: 12px 14px;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.2px;
     }
 
-    header.hero {
+    .hero {
       position: relative;
-      min-height: 88vh;
-      background:
-        linear-gradient(rgba(0,0,0,.48), rgba(0,0,0,.48)),
-        url("https://images.unsplash.com/photo-1599685315640-9ceab2f70610?auto=format&fit=crop&w=1600&q=80") center/cover no-repeat;
-      color: white;
+      min-height: 92vh;
       display: flex;
       align-items: center;
+      color: #fff;
+      background:
+        linear-gradient(90deg, rgba(8,18,10,0.86) 0%, rgba(8,18,10,0.68) 42%, rgba(8,18,10,0.32) 100%),
+        url("https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1600&q=80") center/cover no-repeat;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, #f7f7f2 0%, rgba(247,247,242,0) 14%);
+      pointer-events: none;
     }
 
     .hero-content {
-      max-width: 700px;
-      padding: 70px 0;
+      position: relative;
+      z-index: 2;
+      max-width: 780px;
+      padding: 92px 0 110px;
     }
 
-    .badge {
-      display: inline-block;
-      background: rgba(255,255,255,0.14);
-      border: 1px solid rgba(255,255,255,0.25);
-      padding: 8px 14px;
+    .brand-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: rgba(255,255,255,0.10);
+      border: 1px solid rgba(255,255,255,0.16);
       border-radius: 999px;
-      font-size: 13px;
-      margin-bottom: 18px;
+      padding: 11px 16px;
+      margin-bottom: 22px;
       backdrop-filter: blur(5px);
     }
 
+    .brand-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: #35d56f;
+      box-shadow: 0 0 0 6px rgba(53,213,111,0.18);
+      flex-shrink: 0;
+    }
+
+    .brand-chip span {
+      font-size: 14px;
+      font-weight: 600;
+      color: #f6fbf6;
+    }
+
     h1 {
-      font-size: clamp(34px, 6vw, 62px);
-      line-height: 1.05;
-      margin-bottom: 18px;
+      font-size: clamp(40px, 7vw, 70px);
+      line-height: 1.02;
+      letter-spacing: -1.4px;
+      margin-bottom: 20px;
+      max-width: 780px;
+    }
+
+    .hero-highlight {
+      color: #8affab;
     }
 
     .hero p {
-      font-size: 18px;
-      max-width: 620px;
-      margin-bottom: 28px;
-      color: #f0f0f0;
+      font-size: 19px;
+      max-width: 650px;
+      color: rgba(255,255,255,0.92);
+      margin-bottom: 30px;
     }
 
     .cta-group {
       display: flex;
       flex-wrap: wrap;
       gap: 14px;
-      margin-bottom: 22px;
+      margin-bottom: 26px;
     }
 
     .btn {
       display: inline-block;
-      padding: 14px 22px;
-      border-radius: 10px;
+      padding: 15px 24px;
+      border-radius: 12px;
       font-weight: bold;
       transition: 0.2s ease;
     }
@@ -106,6 +140,7 @@
     .btn-primary {
       background: #25d366;
       color: #fff;
+      box-shadow: 0 12px 28px rgba(37,211,102,0.24);
     }
 
     .btn-primary:hover {
@@ -114,32 +149,39 @@
     }
 
     .btn-secondary {
-      background: white;
-      color: #1f5e25;
+      background: rgba(255,255,255,0.94);
+      color: #123b19;
     }
 
     .btn-secondary:hover {
       transform: translateY(-2px);
-      background: #f1f1f1;
+      background: #ffffff;
     }
 
     .mini-info {
       display: flex;
       flex-wrap: wrap;
-      gap: 16px;
+      gap: 12px;
       font-size: 14px;
-      color: #e8e8e8;
+    }
+
+    .mini-info span {
+      background: rgba(255,255,255,0.10);
+      border: 1px solid rgba(255,255,255,0.14);
+      color: #f3f6f3;
+      padding: 9px 14px;
+      border-radius: 999px;
     }
 
     section {
-      padding: 72px 0;
+      padding: 78px 0;
     }
 
     .section-title {
       text-align: center;
+      font-size: 35px;
+      color: #184d22;
       margin-bottom: 14px;
-      font-size: 34px;
-      color: #1f5e25;
     }
 
     .section-subtitle {
@@ -162,22 +204,11 @@
     }
 
     .card {
-      background: white;
+      background: #fff;
       border-radius: 18px;
       padding: 26px 22px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.07);
       border: 1px solid #ececec;
-    }
-
-    .card h3 {
-      color: #1f5e25;
-      margin-bottom: 10px;
-      font-size: 22px;
-    }
-
-    .card p {
-      color: #555;
-      font-size: 15px;
+      box-shadow: 0 10px 28px rgba(0,0,0,0.06);
     }
 
     .icon {
@@ -185,12 +216,23 @@
       height: 54px;
       border-radius: 14px;
       background: #e8f5e9;
-      color: #1f5e25;
+      color: #184d22;
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 26px;
       margin-bottom: 16px;
+    }
+
+    .card h3 {
+      color: #184d22;
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: #555;
+      font-size: 15px;
     }
 
     .about {
@@ -200,26 +242,26 @@
     .about-wrap {
       display: grid;
       grid-template-columns: 1.1fr 1fr;
-      gap: 35px;
+      gap: 36px;
       align-items: center;
     }
 
     .about-text h2 {
       font-size: 36px;
-      color: #1f5e25;
+      color: #184d22;
       margin-bottom: 18px;
     }
 
     .about-text p {
       color: #555;
-      margin-bottom: 14px;
       font-size: 16px;
+      margin-bottom: 14px;
     }
 
     .about-image img {
       width: 100%;
       height: 100%;
-      min-height: 380px;
+      min-height: 390px;
       object-fit: cover;
       border-radius: 22px;
       box-shadow: 0 14px 35px rgba(0,0,0,0.12);
@@ -231,14 +273,14 @@
 
     .gallery-grid img {
       width: 100%;
-      height: 260px;
+      height: 265px;
       object-fit: cover;
       border-radius: 18px;
       box-shadow: 0 10px 28px rgba(0,0,0,0.10);
     }
 
     .benefits {
-      background: linear-gradient(180deg, #f3f9f3 0%, #ffffff 100%);
+      background: linear-gradient(180deg, #f2f8f2 0%, #ffffff 100%);
     }
 
     .benefits-grid {
@@ -246,17 +288,17 @@
     }
 
     .benefit {
-      background: white;
-      border-left: 5px solid #2f7d32;
+      background: #fff;
+      border-left: 5px solid #2d7a36;
       border-radius: 16px;
       padding: 22px;
       box-shadow: 0 10px 24px rgba(0,0,0,0.06);
     }
 
     .benefit h3 {
-      margin-bottom: 10px;
-      color: #1f5e25;
+      color: #184d22;
       font-size: 20px;
+      margin-bottom: 10px;
     }
 
     .benefit p {
@@ -266,12 +308,12 @@
 
     .cta-section {
       background:
-        linear-gradient(rgba(31,94,37,.86), rgba(31,94,37,.86)),
+        linear-gradient(rgba(24,77,34,0.88), rgba(24,77,34,0.88)),
         url("https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1600&q=80") center/cover no-repeat;
-      color: white;
+      color: #fff;
       text-align: center;
       border-radius: 24px;
-      padding: 50px 24px;
+      padding: 54px 24px;
     }
 
     .cta-section h2 {
@@ -302,15 +344,15 @@
 
     .contact-item strong {
       display: block;
-      margin-bottom: 8px;
       font-size: 18px;
+      margin-bottom: 8px;
     }
 
     footer {
-      background: #123816;
+      background: #102f15;
       color: #dce6dc;
       padding: 28px 0;
-      margin-top: 70px;
+      margin-top: 72px;
     }
 
     footer p {
@@ -318,33 +360,56 @@
       font-size: 14px;
     }
 
-    @media (max-width: 850px) {
+    @media (max-width: 860px) {
       .about-wrap {
         grid-template-columns: 1fr;
       }
 
-      header.hero {
+      .hero {
         min-height: auto;
+        background:
+          linear-gradient(180deg, rgba(8,18,10,0.84) 0%, rgba(8,18,10,0.62) 100%),
+          url("https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1600&q=80") center/cover no-repeat;
       }
 
       .hero-content {
-        padding: 85px 0 70px;
+        padding: 78px 0 92px;
       }
     }
 
     @media (max-width: 560px) {
+      .topbar {
+        font-size: 12px;
+        line-height: 1.5;
+      }
+
+      .brand-chip {
+        width: 100%;
+        justify-content: center;
+        border-radius: 18px;
+      }
+
+      .hero p {
+        font-size: 17px;
+      }
+
       .btn {
         width: 100%;
         text-align: center;
       }
 
+      .mini-info span {
+        width: 100%;
+        text-align: center;
+      }
+
       .section-title {
-        font-size: 28px;
+        font-size: 29px;
       }
 
       .about-text h2,
       .cta-section h2 {
-        font-size: 29px;
+        font-size: 30px;
       }
 
       .gallery-grid img {
@@ -356,23 +421,33 @@
 <body>
 
   <div class="topbar">
-    Jardim cuidado, espaço valorizado — Machico, Caniçal, Santa Cruz e arredores
+    Serviço de jardinagem em Machico, Caniçal, Santa Cruz e arredores
   </div>
 
   <header class="hero">
     <div class="container">
       <div class="hero-content">
-        <span class="badge">Celestino Jardinagem &amp; Manutenção de Jardins</span>
-        <h1>Cuidamos do seu jardim com qualidade, confiança e bom gosto</h1>
+        <div class="brand-chip">
+          <div class="brand-dot"></div>
+          <span>Celestino Jardinagem &amp; Manutenção de Jardins</span>
+        </div>
+
+        <h1>
+          O seu jardim bem tratado, bonito e valorizado
+          <span class="hero-highlight">sem complicações</span>
+        </h1>
+
         <p>
-          Serviços de jardinagem em Machico para particulares e empresas.
-          Corte de relva, manutenção de jardins, poda de árvores e limpeza de terrenos.
+          Serviço profissional de jardinagem para particulares e empresas.
+          Corte de relva, manutenção de jardins, poda de árvores e limpeza de terrenos
+          com resposta rápida e orçamento gratuito.
         </p>
 
         <div class="cta-group">
           <a class="btn btn-primary" href="https://wa.me/351969184451?text=Olá%2C%20preciso%20de%20um%20orçamento%20para%20jardinagem%20em%20Machico" target="_blank" rel="noopener">
             Pedir orçamento no WhatsApp
           </a>
+
           <a class="btn btn-secondary" href="#servicos">
             Ver serviços
           </a>
@@ -380,8 +455,8 @@
 
         <div class="mini-info">
           <span>✔ Orçamento gratuito</span>
-          <span>✔ Serviço profissional</span>
           <span>✔ Atendimento rápido</span>
+          <span>✔ Serviço profissional</span>
         </div>
       </div>
     </div>
@@ -391,7 +466,7 @@
     <div class="container">
       <h2 class="section-title">Os nossos serviços</h2>
       <p class="section-subtitle">
-        Soluções de jardinagem pensadas para manter o seu espaço exterior limpo, organizado e valorizado durante todo o ano.
+        Soluções de jardinagem para manter o seu espaço exterior limpo, organizado e com melhor apresentação durante todo o ano.
       </p>
 
       <div class="services-grid">
@@ -453,9 +528,9 @@
 
   <section>
     <div class="container">
-      <h2 class="section-title">Imagens do tipo de trabalho</h2>
+      <h2 class="section-title">Exemplos do tipo de trabalho</h2>
       <p class="section-subtitle">
-        Depois podes trocar estas imagens por fotos reais dos trabalhos do Celestino. Isso vai ficar muito mais forte e vender mais.
+        Estas imagens servem para arrancar. Depois tens de trocar por fotos reais do Celestino, porque isso vai vender muito mais.
       </p>
 
       <div class="gallery-grid">
@@ -505,6 +580,7 @@
           Entre em contacto agora e peça o seu orçamento.
           Serviço profissional de jardinagem para casas, terrenos e empresas.
         </p>
+
         <a class="btn btn-primary" href="https://wa.me/351969184451?text=Olá%2C%20quero%20pedir%20um%20orçamento%20para%20jardinagem" target="_blank" rel="noopener">
           Pedir orçamento gratuito
         </a>
@@ -514,10 +590,12 @@
             <strong>Telefone / WhatsApp</strong>
             969 184 451
           </div>
+
           <div class="contact-item">
             <strong>Zona de serviço</strong>
             Machico, Caniçal, Santa Cruz e arredores
           </div>
+
           <div class="contact-item">
             <strong>Tipo de clientes</strong>
             Particulares e empresas
@@ -534,4 +612,4 @@
   </footer>
 
 </body>
-</html>
+            </html>
