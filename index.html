@@ -1,108 +1,278 @@
 <!DOCTYPE html>
 <html lang="pt-PT">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Celestino Jardinagem Machico</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Celestino Jardinagem Machico</title>
+  <meta name="description" content="Serviços de jardinagem em Machico, Caniçal e Santa Cruz. Corte de relva, manutenção de jardins, poda e limpeza de terrenos. Orçamento gratuito." />
+  <meta name="theme-color" content="#123b19" />
 
-<meta name="description" content="Serviços de jardinagem em Machico, Caniçal e Santa Cruz. Corte de relva, manutenção e limpeza de terrenos. Orçamento gratuito." />
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-<style>
-body{
-  margin:0;
-  font-family:Arial, sans-serif;
-  background:#0f1f14;
-  color:white;
-  text-align:center;
-}
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: linear-gradient(180deg, #f4f7f2 0%, #eef4ee 100%);
+      color: #182018;
+    }
 
-.hero{
-  position:relative;
-}
+    img {
+      max-width: 100%;
+      display: block;
+    }
 
-.hero img{
-  width:100%;
-  height:auto;
-  display:block;
-}
+    a {
+      text-decoration: none;
+    }
 
-.overlay{
-  position:absolute;
-  top:0;
-  left:0;
-  right:0;
-  bottom:0;
-  background:linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.8));
-}
+    .wrap {
+      min-height: 100vh;
+    }
 
-.content{
-  position:absolute;
-  bottom:30px;
-  width:100%;
-  padding:20px;
-}
+    .hero {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      background: #0f2415;
+    }
 
-h1{
-  font-size:28px;
-  margin-bottom:10px;
-}
+    .hero img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
 
-p{
-  font-size:16px;
-  margin-bottom:20px;
-}
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.10) 0%,
+        rgba(0, 0, 0, 0.18) 45%,
+        rgba(0, 0, 0, 0.45) 100%
+      );
+      pointer-events: none;
+    }
 
-.btn{
-  display:block;
-  margin:10px auto;
-  padding:15px;
-  max-width:300px;
-  border-radius:10px;
-  font-weight:bold;
-  text-decoration:none;
-}
+    .card {
+      width: min(92%, 760px);
+      margin: -34px auto 30px;
+      position: relative;
+      z-index: 2;
+      background: #ffffff;
+      border-radius: 24px;
+      padding: 28px 22px;
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.14);
+      border: 1px solid rgba(0,0,0,0.05);
+    }
 
-.whatsapp{
-  background:#25d366;
-  color:white;
-}
+    .badge {
+      display: inline-block;
+      background: #e8f5e9;
+      color: #1f6a2a;
+      font-size: 13px;
+      font-weight: 700;
+      padding: 9px 14px;
+      border-radius: 999px;
+      margin-bottom: 14px;
+    }
 
-.facebook{
-  background:#1877f2;
-  color:white;
-}
+    h1 {
+      font-size: 36px;
+      line-height: 1.05;
+      color: #123b19;
+      margin-bottom: 14px;
+      text-align: center;
+    }
 
-.footer{
-  padding:20px;
-  font-size:14px;
-  color:#ccc;
-}
-</style>
+    .sub {
+      font-size: 17px;
+      line-height: 1.6;
+      color: #495549;
+      text-align: center;
+      margin-bottom: 22px;
+    }
+
+    .highlights {
+      display: grid;
+      gap: 10px;
+      margin-bottom: 22px;
+    }
+
+    .highlight {
+      background: #f5f8f5;
+      border: 1px solid #e5eee5;
+      border-radius: 14px;
+      padding: 13px 14px;
+      text-align: center;
+      font-size: 15px;
+      color: #244124;
+      font-weight: 600;
+    }
+
+    .buttons {
+      display: grid;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    .btn {
+      display: block;
+      width: 100%;
+      text-align: center;
+      padding: 16px 18px;
+      border-radius: 16px;
+      font-size: 18px;
+      font-weight: 700;
+      transition: transform 0.2s ease;
+    }
+
+    .btn:active {
+      transform: scale(0.98);
+    }
+
+    .btn-whatsapp {
+      background: #25d366;
+      color: white;
+      box-shadow: 0 10px 22px rgba(37, 211, 102, 0.22);
+    }
+
+    .btn-facebook {
+      background: #1877f2;
+      color: white;
+      box-shadow: 0 10px 22px rgba(24, 119, 242, 0.18);
+    }
+
+    .services {
+      margin-top: 6px;
+      margin-bottom: 24px;
+    }
+
+    .services h2 {
+      font-size: 20px;
+      color: #123b19;
+      text-align: center;
+      margin-bottom: 14px;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .service {
+      background: #f7faf7;
+      border: 1px solid #e4ece4;
+      border-radius: 14px;
+      padding: 14px 10px;
+      text-align: center;
+      font-size: 14px;
+      font-weight: 700;
+      color: #234023;
+    }
+
+    .bottom {
+      border-top: 1px solid #edf1ed;
+      padding-top: 20px;
+      text-align: center;
+    }
+
+    .zone {
+      font-size: 15px;
+      color: #476047;
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
+
+    .mini {
+      font-size: 13px;
+      color: #6a776a;
+      line-height: 1.5;
+    }
+
+    @media (min-width: 700px) {
+      .card {
+        margin-top: -48px;
+        padding: 34px 30px;
+      }
+
+      h1 {
+        font-size: 46px;
+      }
+
+      .sub {
+        font-size: 18px;
+      }
+
+      .highlights {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .buttons {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .services-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+  </style>
 </head>
-
 <body>
+  <div class="wrap">
+    <section class="hero">
+      <img src="hero.jpg" alt="Celestino Jardinagem Machico" />
+    </section>
 
-<div class="hero">
-  <img src="hero.jpg" alt="Celestino Jardinagem Machico">
-  <div class="overlay"></div>
+    <main class="card">
+      <div class="badge">Celestino Jardinagem Machico</div>
 
-  <div class="content">
-    <h1>Jardinagem em Machico</h1>
-    <p>Orçamento gratuito • Resposta rápida • Serviço profissional</p>
+      <h1>Jardinagem em Machico</h1>
 
-    <a class="btn whatsapp" href="https://wa.me/351969184451?text=Olá%2C%20quero%20um%20orçamento%20para%20jardinagem" target="_blank">
-      Pedir orçamento no WhatsApp
-    </a>
+      <p class="sub">
+        Serviço profissional de jardinagem para particulares e empresas.
+        Orçamento gratuito, resposta rápida e atendimento por WhatsApp.
+      </p>
 
-    <a class="btn facebook" href="https://www.facebook.com/share/1EKzhbnHmd/" target="_blank">
-      Ver Facebook
-    </a>
+      <div class="highlights">
+        <div class="highlight">✔ Orçamento gratuito</div>
+        <div class="highlight">✔ Resposta rápida</div>
+        <div class="highlight">✔ Serviço profissional</div>
+      </div>
+
+      <div class="buttons">
+        <a class="btn btn-whatsapp" href="https://wa.me/351969184451?text=Olá%2C%20quero%20um%20orçamento%20para%20jardinagem" target="_blank" rel="noopener">
+          Pedir orçamento no WhatsApp
+        </a>
+
+        <a class="btn btn-facebook" href="https://www.facebook.com/share/1EKzhbnHmd/" target="_blank" rel="noopener">
+          Ver Facebook
+        </a>
+      </div>
+
+      <section class="services">
+        <h2>Serviços</h2>
+        <div class="services-grid">
+          <div class="service">Corte de relva</div>
+          <div class="service">Manutenção de jardins</div>
+          <div class="service">Poda de árvores e sebes</div>
+          <div class="service">Limpeza de terrenos</div>
+        </div>
+      </section>
+
+      <div class="bottom">
+        <div class="zone">Machico • Caniçal • Santa Cruz e arredores</div>
+        <div class="mini">
+          Serviço local com foco na qualidade, cuidado do espaço exterior e atendimento simples e direto.
+        </div>
+      </div>
+    </main>
   </div>
-</div>
-
-<div class="footer">
-  Machico • Caniçal • Santa Cruz e arredores
-</div>
-
 </body>
 </html>
